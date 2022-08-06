@@ -20,12 +20,14 @@ class Ship(Turtle):
 
     def move_left(self):
         x,y = self.pos()
-        self.clear()
-        self.create_ship(x- 20 -20, -200)
+        if x > -240:
+            self.clear()
+            self.create_ship(x- 20 -20, -200)
 
     def move_right(self):
         x,y = self.pos()
-        self.clear()
-        self.create_ship(x + 20, -200)
+        if x < 260:
+            self.clear()
+            self.create_ship(x + 20, -200)
 
 

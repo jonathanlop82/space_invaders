@@ -20,13 +20,15 @@ class Bullet(Turtle):
 
     def move_left(self):
         x,y = self.pos()
-        self.clear()
-        self.goto(x-30,y)
+        if x > -260:
+            self.clear()
+            self.goto(x-30,y)
 
     def move_right(self):
         x,y = self.pos()
-        self.clear()
-        self.goto(x+30,y)
+        if x < 240:
+            self.clear()
+            self.goto(x+30,y)
 
 
 
