@@ -101,26 +101,27 @@ while not game_over:
     
 
     for al in aliens_list:
-            if al.distance(bullet) < 50:
-                # x,y = al.pos()
-                aliens_count -= 1
-                al.goto(0,-400)
-                bullet.goto(0,310)
-                bullet.clear()
-                x,y = ship.pos()
-                bullet.move = True
-                bullet = Bullet()
-                bullet.goto(x-20,y+60)
-                bullet.stamp()
-                # sq.reset()
+        if al.distance(bullet) < 50:
+            # x,y = al.pos()
+            aliens_count -= 1
+            al.goto(0,1400)
+            bullet.goto(0,310)
+            bullet.clear()
+            x,y = ship.pos()
+            bullet.move = True
+            bullet = Bullet()
+            bullet.goto(x-20,y+60)
+            bullet.stamp()
+            # sq.reset()
 
-            if al.distance(ship) < 100:
-                lose = Turtle()
-                lose.hideturtle()
-                lose.color('white')
-                lose.goto(0,0)
-                lose.write("YOU LOSE", False, align='center', font=('Courier', 60, 'normal'))
-                game_over = True
+        alx,aly = al.pos()
+        if aly < -190:
+            lose = Turtle()
+            lose.hideturtle()
+            lose.color('white')
+            lose.goto(0,0)
+            lose.write("YOU LOSE", False, align='center', font=('Courier', 60, 'normal'))
+            game_over = True
     
     
 
