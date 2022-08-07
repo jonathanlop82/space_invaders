@@ -4,11 +4,18 @@ from turtle import Turtle
 class Aliens(Turtle):
     def __init__(self):
         super().__init__()
-        self.penup()
         self.shape('alien.gif')
+        self.penup()
 
-
-    def move(self):
+    def move_left(self):
         x,y = self.pos()
-        self.clear()
-        self.goto(x + 40, y)
+        self.goto(x-1,y)
+
+    def move_right(self):
+        x,y = self.pos()
+        self.goto(x+1,y)
+
+    def move_down(self):
+        x,y = self.pos()
+        self.goto(x,y-20)
+
